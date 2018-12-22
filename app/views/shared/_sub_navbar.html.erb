@@ -1,0 +1,18 @@
+<div class="search-navbar">
+  <div class="search-navbar-query-items">
+    <% if @search_params.present? %>
+      <% @search_params.each do |query| %>
+      <div class="search-navbar-query-item">
+        <p><%= query %></p>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="search-navbar-search-box col-md-7 col-xl-7 col-sm-10 col-xs-12">
+    <i class="fa fa-search nav-search-icon"></i>
+      <%= form_tag content_index_path, method: :get, class: "sub-nav-search" do %>
+        <%= text_field_tag :search, nil, placeholder: "What do you want to learn?", class: "search-form-sub-control" %>
+        <%= submit_tag "", style: "display: none;" %>
+      <% end %>
+  </div>
+</div>

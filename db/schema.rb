@@ -10,20 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181221101651) do
+ActiveRecord::Schema.define(version: 20181221123546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "contents", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "title"
-    t.string "url"
-    t.string "type"
-    t.string "category"
-    t.string "source"
-    t.integer "range"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "content_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.string "range"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "source_id"
+    t.bigint "category_id"
+    t.bigint "content_type_id"
+    t.index ["category_id"], name: "index_contents_on_category_id"
+    t.index ["content_type_id"], name: "index_contents_on_content_type_id"
+    t.index ["source_id"], name: "index_contents_on_source_id"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "contents", "categories"
+  add_foreign_key "contents", "content_types"
+  add_foreign_key "contents", "sources"
 end

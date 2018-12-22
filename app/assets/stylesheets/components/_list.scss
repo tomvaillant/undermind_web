@@ -1,0 +1,14 @@
+.listbox-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+  }
+  border-bottom: solid 1px #F3F3F3;
+}
