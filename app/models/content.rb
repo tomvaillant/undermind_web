@@ -17,14 +17,14 @@ class Content < ApplicationRecord
       category: [ :title ]
     },
     associated_against: {
-      content_type: [ :type ]
+      content_type: [ :name ]
     },
     using: {
       tsearch: { prefix: true }
     }
 
-  def self.search(query_item)
-    query = "SELECT content.* FROM content"
-    self.find_by_sql(query)
-  end
+  # def self.search(query_item)
+  #   query = "SELECT content.* FROM content"
+  #   self.find_by_sql(query)
+  # end
 end

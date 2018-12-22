@@ -1,9 +1,9 @@
 .banner {
   color: white;
   text-align: center;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1490424660416-359912d314b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=75849dd2a245dded86c3bfdfdd69d28c&auto=format&fit=crop&w=1650&q=80');
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://source.unsplash.com/YLSwjSy7stw/');
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -27,6 +27,7 @@
 .banner-search-box {
   padding: 5px 10px;
   background-color: #fff;
+  border-radius: 3px;
 }
 
 .banner-search-box-hosts {
