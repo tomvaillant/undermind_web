@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181223085410) do
+ActiveRecord::Schema.define(version: 20181223212129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20181223085410) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "content_id"
+    t.index ["content_id"], name: "index_content_images_on_content_id"
   end
 
   create_table "content_types", force: :cascade do |t|
@@ -53,6 +55,7 @@ ActiveRecord::Schema.define(version: 20181223085410) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "content_images", "contents"
   add_foreign_key "contents", "categories"
   add_foreign_key "contents", "content_types"
   add_foreign_key "contents", "sources"

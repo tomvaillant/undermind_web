@@ -8,8 +8,8 @@
 require 'csv'
 
 puts 'Cleaning database...'
-Content.destroy_all
 ContentImage.destroy_all
+Content.destroy_all
 Source.destroy_all
 Category.destroy_all
 ContentType.destroy_all
@@ -36,14 +36,14 @@ physics = Category.create!({ title: "Physics" })
 physics.save
 
 puts 'Creating content...'
-paul_graham = Content.create!(
-  title: "Kedrosky",
-  url: "http://www.paulgraham.com/kedrosky.html",
-  source: source_a,
-  category: entrepreneurship,
-  content_type: article
-  )
-paul_graham.save
+# paul_graham = Content.create!(
+#   title: "Kedrosky",
+#   url: "http://www.paulgraham.com/kedrosky.html",
+#   source: source_a,
+#   category: entrepreneurship,
+#   content_type: article
+#   )
+# paul_graham.save
 
 csv_text = File.path(Rails.root.join('db', 'sample_1.csv'))
 csv_options = { col_sep: ',', headers: :first_row }
@@ -54,10 +54,6 @@ CSV.foreach(csv_text, csv_options) do |row|
   c.title = row[5]
   medium = ContentType.where(name: "#{row[1]}").first
   category = Category.where(title: "#{row[3]}").first
-  unless row[6].nil?
-    image = ContentImage.create!({url: "#{row[6]}"})
-    c.content_image = image
-  end
   unless row[4].nil?
     c.range = row[4]
   end
@@ -72,6 +68,11 @@ CSV.foreach(csv_text, csv_options) do |row|
   c.content_type = medium
   c.category = category
   c.save!
+  unless row[6].nil?
+    image = ContentImage.new({ url: "#{row[6]}" })
+    image.content = c
+    image.save!
+  end
 end
 
 
