@@ -26,6 +26,8 @@ video = ContentType.create!({ name: "Videos" })
 video.save
 lecture = ContentType.create!({ name: "Lectures" })
 lecture.save
+podcasts = ContentType.create!({ name: "Podcasts" })
+podcasts.save
 
 puts 'Creating categories...'
 entrepreneurship = Category.create!({ title: "Entrepreneurship" })
