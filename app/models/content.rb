@@ -1,5 +1,5 @@
 class Content < ApplicationRecord
-  validates :url, presence: true, uniqueness: true
+  validates :url, presence: true
   belongs_to :source
   belongs_to :category
   belongs_to :content_type
