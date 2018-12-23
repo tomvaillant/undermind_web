@@ -34,18 +34,28 @@ entrepreneurship = Category.create!({ title: "Entrepreneurship" })
 entrepreneurship.save
 physics = Category.create!({ title: "Physics" })
 physics.save
+technology = Category.create!({ title: "Technology" })
+technology.save
+behavioural_science = Category.create!({ title: "Behavioural Science" })
+behavioural_science.save
+engineering = Category.create!({ title: "Engineering" })
+engineering.save
+history = Category.create!({ title: "History" })
+history.save
+computer_science = Category.create!({ title: "Computer Science" })
+computer_science.save
+astronomy = Category.create!({ title: "Astronomy" })
+astronomy.save
+biology = Category.create!({ title: "Biology" })
+biology.save
+mathematics = Category.create!({ title: "Mathematics" })
+mathematics.save
+environmental = Category.create!({ title: "Environmental" })
+environmental.save
 
-puts 'Creating content...'
-# paul_graham = Content.create!(
-#   title: "Kedrosky",
-#   url: "http://www.paulgraham.com/kedrosky.html",
-#   source: source_a,
-#   category: entrepreneurship,
-#   content_type: article
-#   )
-# paul_graham.save
+puts 'Creating lectures...'
 
-csv_text = File.path(Rails.root.join('db', 'sample_1.csv'))
+csv_text = File.path(Rails.root.join('db', 'lectures.csv'))
 csv_options = { col_sep: ',', headers: :first_row }
 
 CSV.foreach(csv_text, csv_options) do |row|
@@ -54,6 +64,13 @@ CSV.foreach(csv_text, csv_options) do |row|
   c.title = row[5]
   medium = ContentType.where(name: "#{row[1]}").first
   category = Category.where(title: "#{row[3]}").first
+  if category.present?
+    c.category = category
+  else
+    category_new = Category.create!({ title: "#{row[3]}"})
+    category_new.save!
+    c.category = category_new
+  end
   unless row[4].nil?
     c.range = row[4]
   end
@@ -62,11 +79,10 @@ CSV.foreach(csv_text, csv_options) do |row|
     c.source = source
   else
     source_new = Source.create!({ name: "#{row[2]}"})
-    source_new.save
+    source_new.save!
     c.source = source_new
   end
   c.content_type = medium
-  c.category = category
   c.save!
   unless row[6].nil?
     image = ContentImage.new({ url: "#{row[6]}" })
