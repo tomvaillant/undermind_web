@@ -8,8 +8,6 @@ class ContentController < ApplicationController
     if params[:search].present?
       @search_params = params[:search].split(/\W+/)
       @content_list = Content.search(params[:search])
-    elsif params[:search_category].present?
-      # deliver category search
     else
       @content_take = Content.take(50)
     end

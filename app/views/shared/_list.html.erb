@@ -1,5 +1,14 @@
 <%= link_to content.url do %>
   <div class="listbox-wrapper">
+    <div class="listbox-content-type">
+      <% if content.content_type == "Articles" %>
+      <!-- icon -->
+      <% elsif content.content_type == "Lectures" %>
+      <!-- icon -->
+      <% elsif content.content_type == "Videos" %>
+      <!-- icon -->
+      <% end %>
+    </div>
     <div class="listbox-category">
       <%= content.category.title %>
     </div>

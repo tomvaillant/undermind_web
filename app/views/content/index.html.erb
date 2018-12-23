@@ -2,21 +2,32 @@
   <%= render 'shared/navbar' %>
   <%= render 'shared/sub_navbar' %>
   <div class="index-container">
-    <% if @content_list.nil? %>
-      <div class="empty-search-warning">
-        <p>There are no content in
-        <% @search_params.each do |query| %>
-          <span>"<%= query.capitalize %>"</span>
+    <!-- WITH SEARCH -->
+    <% if params[:search].present? %>
+      <!-- SEARCH - PARAMS EXIST -->
+      <% unless @content_list.nil? %>
+        <% @content_list.each do |content| %>
+          <%= render 'shared/list', content: content %>
         <% end %>
-        yet! Help us add some!
-        </p>
-      </div>
+      <% else %>
+        <!-- SEARCH - PARAMS DO NOT EXIST -->
+        <div class="empty-search-warning">
+          <p>There are no items in
+          <% @search_params.each do |query| %>
+            <span>"<%= query.capitalize %>"</span>
+          <% end %>
+          yet! Help us add some!
+          </p>
+        </div>
+        <% @content_take = Content.take(10) %>
+        <% @content_take.each do |content| %>
+          <%= render 'shared/list', content: content %>
+        <% end %>
+      <% end %>
+    <!-- EMPTY SEARCH -->
+    <% else %>
       <% @content_take = Content.take(10) %>
       <% @content_take.each do |content| %>
-        <%= render 'shared/list', content: content %>
-      <% end %>
-    <% else %>
-      <% @content_list.each do |content| %>
         <%= render 'shared/list', content: content %>
       <% end %>
     <% end %>

@@ -6,11 +6,10 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Open-Source</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Submit</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Privacy</a>
+    <%= link_to "About", about_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %>
+    <a href="https://github.com/tomvaillant/undermind_web" class="navbar-wagon-item navbar-wagon-link" target="_blank">Open-Source</a>
+    <%= link_to "Privacy", privacy_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %>
+<!--     <a href="" class="navbar-wagon-item navbar-wagon-link">Submit</a> -->
   </div>
 
 
@@ -19,10 +18,10 @@
     <div class="dropdown">
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Open-Source</a></li>
-        <li><a href="#">Submit</a></li>
-        <li><a href="#">Privacy</a></li>
+        <li><%= link_to "About", about_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><a href="https://github.com/tomvaillant/undermind_web" target="_blank">Open-Source</a></li>
+ <!--        <li><a href="#">Submit</a></li> -->
+        <li><%= link_to "Privacy", privacy_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
