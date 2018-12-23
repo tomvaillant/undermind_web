@@ -1,6 +1,10 @@
 .index-container {
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80vh;
 }
+
 .wrapper-search {
   min-height: 100vh;
   background-color: white;
@@ -10,4 +14,12 @@
   a:hover {
     text-decoration: none !important;
   }
+}
+
+.listbox {
+}
+
+.kaminari {
+  margin-bottom: 10px;
+  align-self: center;
 }
