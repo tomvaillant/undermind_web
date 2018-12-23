@@ -2,34 +2,39 @@
   <%= render 'shared/navbar' %>
   <%= render 'shared/sub_navbar' %>
   <div class="index-container">
-    <!-- WITH SEARCH -->
-    <% if params[:search].present? %>
-      <!-- SEARCH - PARAMS EXIST -->
-      <% unless @content_list.nil? %>
+    <div class="listbox">
+      <!-- WITH SEARCH -->
+      <% if params[:search].present? %>
+        <!-- SEARCH - PARAMS EXIST -->
+        <% unless @content_list.nil? %>
+          <% @content_list.each do |content| %>
+            <%= render 'shared/list', content: content %>
+          <% end %>
+        <% else %>
+          <!-- SEARCH - PARAMS DO NOT EXIST -->
+          <div class="empty-search-warning">
+            <p>There are no items in
+            <% @search_params.each do |query| %>
+              <span>"<%= query.capitalize %>"</span>
+            <% end %>
+            yet! Help us add some!
+            </p>
+          </div>
+          <% @content_list = Content.take(30).page(params[:page]).per(15) %>
+          <% @content_list.each do |content| %>
+            <%= render 'shared/list', content: content %>
+          <% end %>
+        <% end %>
+      <!-- EMPTY SEARCH -->
+      <% else %>
+        <% @content_list = Content.take(30).page(params[:page]).per(15) %>
         <% @content_list.each do |content| %>
           <%= render 'shared/list', content: content %>
         <% end %>
-      <% else %>
-        <!-- SEARCH - PARAMS DO NOT EXIST -->
-        <div class="empty-search-warning">
-          <p>There are no items in
-          <% @search_params.each do |query| %>
-            <span>"<%= query.capitalize %>"</span>
-          <% end %>
-          yet! Help us add some!
-          </p>
-        </div>
-        <% @content_take = Content.take(10) %>
-        <% @content_take.each do |content| %>
-          <%= render 'shared/list', content: content %>
-        <% end %>
       <% end %>
-    <!-- EMPTY SEARCH -->
-    <% else %>
-      <% @content_take = Content.take(10) %>
-      <% @content_take.each do |content| %>
-        <%= render 'shared/list', content: content %>
-      <% end %>
-    <% end %>
+    </div>
+    <div class="kaminari">
+      <%= paginate @content_list, window: 2 %>
+    </div>
   </div>
 </div>

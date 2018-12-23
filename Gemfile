@@ -8,6 +8,8 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem "figaro"
+gem 'kaminari'
+gem "bootstrap-kaminari-views"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

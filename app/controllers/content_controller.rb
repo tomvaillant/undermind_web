@@ -7,9 +7,9 @@ class ContentController < ApplicationController
   def index
     if params[:search].present?
       @search_params = params[:search].split(/\W+/)
-      @content_list = Content.search(params[:search])
+      @content_list = Content.search(params[:search]).page(params[:page]).per(15)
     else
-      @content_take = Content.take(50)
+      @content_take = Content.take(50).page(params[:page]).per(15)
     end
   end
 

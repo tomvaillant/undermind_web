@@ -48,6 +48,9 @@ GEM
     base32 (0.3.2)
     bcrypt (3.1.12)
     bindex (0.5.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -96,6 +99,18 @@ GEM
     jsonapi-serializers (1.0.1)
       activesupport
     jwt (2.1.0)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -222,12 +237,14 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bootstrap-kaminari-views
   bootstrap-sass (~> 3.3)
   dotenv-rails
   figaro
   font-awesome-sass (~> 5.0.9)
   forest_liana
   jbuilder (~> 2.0)
+  kaminari
   listen (~> 3.0.5)
   pg (~> 0.21)
   pg_search
