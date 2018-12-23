@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
+gem 'forest_liana'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

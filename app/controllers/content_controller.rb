@@ -28,6 +28,9 @@ class ContentController < ApplicationController
     @content.destroy
   end
 
+  def add_to_database
+  end
+
   def content_params
     params.require(:content).permit(:title, :url, :source, :medium, :category, :range)
   end

@@ -11,12 +11,8 @@ class Content < ApplicationRecord
   pg_search_scope :search,
     against: [ :title ],
     associated_against: {
-      source: [ :name ]
-    },
-    associated_against: {
-      category: [ :title ]
-    },
-    associated_against: {
+      source: [ :name ],
+      category: [ :title ],
       content_type: [ :name ]
     },
     using: {
