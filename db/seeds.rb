@@ -47,7 +47,6 @@ csv_text = File.path(Rails.root.join('db', 'sample_1.csv'))
 csv_options = { col_sep: ',', headers: :first_row }
 
 CSV.foreach(csv_text, csv_options) do |row|
-  puts "#{row[0]}"
   c = Content.new
   c.url = row[0]
   c.title = row[5]
