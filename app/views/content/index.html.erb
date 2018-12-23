@@ -20,21 +20,23 @@
             yet! Help us add some!
             </p>
           </div>
-          <% @content_list = Content.take(30).page(params[:page]).per(15) %>
+          <% @content_list = Content.take(20) %>
           <% @content_list.each do |content| %>
             <%= render 'shared/list', content: content %>
           <% end %>
         <% end %>
       <!-- EMPTY SEARCH -->
       <% else %>
-        <% @content_list = Content.take(30).page(params[:page]).per(15) %>
+        <% @content_list = Content.take(20) %>
         <% @content_list.each do |content| %>
           <%= render 'shared/list', content: content %>
         <% end %>
       <% end %>
     </div>
-    <div class="kaminari">
-      <%= paginate @content_list, window: 2 %>
-    </div>
+    <% if params[:search].present? %>
+      <div class="kaminari">
+        <%= paginate @content_list, window: 2 %>
+      </div>
+    <% end %>
   </div>
 </div>

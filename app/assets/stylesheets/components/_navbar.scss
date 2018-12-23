@@ -9,6 +9,9 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1px;
+  a {
+    text-decoration: none !important;
+  }
 }
 
 /* Logo */
@@ -42,7 +45,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $blue;
   text-decoration: none;
 }
 

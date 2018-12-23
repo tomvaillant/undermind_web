@@ -71,6 +71,16 @@
   }
 }
 
+#banner-button {
+  &:hover {
+    color: white;
+    background-color: $blue;
+  }
+  &:focus {
+    background-color: red;
+  }
+}
+
 #search:hover:focus {
   outline: none;
 }

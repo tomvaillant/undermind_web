@@ -5,12 +5,8 @@ class ContentController < ApplicationController
   end
 
   def index
-    if params[:search].present?
-      @search_params = params[:search].split(/\W+/)
-      @content_list = Content.search(params[:search]).page(params[:page]).per(15)
-    else
-      @content_take = Content.take(50).page(params[:page]).per(15)
-    end
+    @search_params = params[:search].split(/\W+/)
+    @content_list = Content.search(params[:search]).page(params[:page]).per(15)
   end
 
   # def edit
@@ -24,9 +20,6 @@ class ContentController < ApplicationController
   def destroy
     @content = Content.find(params[:id])
     @content.destroy
-  end
-
-  def add_to_database
   end
 
   def content_params
