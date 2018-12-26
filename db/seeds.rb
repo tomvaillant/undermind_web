@@ -14,7 +14,7 @@ require 'csv'
 
 puts 'Creating videos...'
 
-csv_text = File.path(Rails.root.join('db', 'sample_2.csv'))
+csv_text = File.path(Rails.root.join('db', 'articles.csv'))
 csv_options = { col_sep: ',', headers: :first_row }
 
 CSV.foreach(csv_text, csv_options) do |row|
