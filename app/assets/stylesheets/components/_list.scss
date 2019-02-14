@@ -1,9 +1,10 @@
 .listbox-wrapper {
   display: flex;
-  justify-content: flex-start;
-  padding: 15px 2%;
+  justify-content: space-around;
+  padding: 10px 1%;
   background-color: white;
   text-decoration: none;
+  align-items: center;
   color: black;
   &:hover {
     text-decoration: none;
@@ -15,18 +16,17 @@
 
 .listbox-content-type img {
   height: 20px;
-  margin-right: 30px;
 }
 
 .listbox-title {
-  margin-left: 10px;
   width: 65%;
+  font-size: 14px;
 }
 
 .listbox-source {
-  margin-left: 3%;
-  margin-right: 25px;
+  font-size: 14px;
 }
 
 .listbox-category {
+  font-size: 14px;
 }

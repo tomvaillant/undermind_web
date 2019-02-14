@@ -1,3 +1,11 @@
+.app-wrapper {
+  min-height: calc(100vh - 135px);
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
 .banner {
   color: white;
   text-align: center;

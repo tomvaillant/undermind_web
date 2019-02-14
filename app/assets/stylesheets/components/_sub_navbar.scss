@@ -18,22 +18,22 @@
 }
 
 .search-navbar-query-item {
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
   margin: 0px 5px;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 0 5px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
-  p {
-    color: $gray;
-  }
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  color: black;
+  border-radius: 4px;
 }
 
 .sub-nav-search {
   width: 100% !important;
-  font-size: 18px;
-  color: $gray;
+  font-size: 16px;
+  color: black;
   border-bottom: solid;
   border-width: 0.3px;
   border-color: #999999;
@@ -51,7 +51,7 @@
 }
 
 .nav-search-icon {
-  padding-right: 5px;
+  padding-right: 10px;
   color: $gray;
 }
 

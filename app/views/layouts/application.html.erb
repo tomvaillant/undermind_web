@@ -30,10 +30,13 @@
     <%= action_cable_meta_tag %>
     <%= favicon_link_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%#= stylesheet_pack_tag 'application' %>
   </head>
   <body>
-    <%= yield %>
+    <%= render 'shared/navbar' %>
+    <div class="app-wrapper">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
