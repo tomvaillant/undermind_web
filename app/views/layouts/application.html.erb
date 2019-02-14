@@ -34,9 +34,16 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    <div class="app-wrapper">
-      <%= yield %>
-    </div>
+    <% if params[:search_wrapper].present? %>
+      <div class="index-wrapper">
+        <%= yield %>
+      </div>
+    <% else %>
+      <div class="app-wrapper">
+        <%= yield %>
+      </div>
+    <% end %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

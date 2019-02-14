@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(100vh - 141px);
 }
 
 .wrapper-search {
@@ -17,6 +16,14 @@
 }
 
 .listbox {
+  a:focus {
+    outline: none;
+    text-decoration: none;
+  }
+   a:hover {
+    outline: none;
+    text-decoration: none;
+  }
 }
 
 .kaminari {

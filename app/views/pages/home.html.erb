@@ -6,6 +6,7 @@
     <div class="banner-search-box">
       <%= form_tag content_index_path, method: :get, class: "banner-search-text" do %>
         <%= text_field_tag :search, nil, placeholder: "Try 'Philosophy or Science'!", class: "search-form-control root-search-opacity" %>
+        <%= hidden_field_tag :search_wrapper, value: "wrapper" %>
         <%= submit_tag "", style: "display: none;" %>
         <button class="btn-undermind-no-padding btn" id="banner-button">Search</button>
       <% end %>

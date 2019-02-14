@@ -3,19 +3,22 @@
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
   transition: all 0.3s ease;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 1px;
   a {
     text-decoration: none !important;
   }
 }
 
+.navbar-inner {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* Logo */
 .navbar-logo img {
-  height: 17px;
+  height: 15px;
 }
 
 /* User Avatar */
@@ -40,7 +43,7 @@
 
 /* Navbar link */
 .navbar-link {
-  color: #616668;
+  color: black;
   font-size: 14px;
 }
 .navbar-link:hover {

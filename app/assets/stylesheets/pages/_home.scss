@@ -6,6 +6,11 @@
   flex-direction: column;
 }
 
+.index-wrapper {
+  min-height: calc(100vh - 150px);
+  width: 100%;
+}
+
 .banner {
   color: white;
   text-align: center;

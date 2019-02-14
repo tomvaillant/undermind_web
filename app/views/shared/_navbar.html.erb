@@ -1,28 +1,30 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <a href="/" class="navbar-logo">
-    <%= image_tag("logo.png") %>
-  </a>
+<div class="navbar">
+  <div class="navbar-inner col-md-8 col-md-offset-2 col-xs-12">
+    <!-- Logo -->
+    <a href="/" class="navbar-logo">
+      <%= image_tag("logo.png") %>
+    </a>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "About", about_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %>
-    <a href="https://github.com/tomvaillant/undermind_web" class="navbar-wagon-item navbar-wagon-link" target="_blank">Open-Source</a>
-    <%= link_to "Privacy", privacy_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %>
-<!--     <a href="" class="navbar-wagon-item navbar-wagon-link">Submit</a> -->
-  </div>
+    <!-- Right Navigation -->
+    <div class="navbar-right hidden-xs hidden-sm">
+      <%= link_to "About", about_path, method: :get, class: "navbar-item navbar-link" %>
+      <a href="https://github.com/tomvaillant/undermind_web" class="navbar-item navbar-link" target="_blank">Open-Source</a>
+      <%= link_to "Privacy", privacy_path, method: :get, class: "navbar-wagon-item navbar-link" %>
+  <!--     <a href="" class="navbar-wagon-item navbar-wagon-link">Submit</a> -->
+    </div>
 
 
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "About", about_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><a href="https://github.com/tomvaillant/undermind_web" target="_blank">Open-Source</a></li>
- <!--        <li><a href="#">Submit</a></li> -->
-        <li><%= link_to "Privacy", privacy_path, method: :get, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to "About", about_path, method: :get, class: "navbar-item navbar-link" %></li>
+          <li><a href="https://github.com/tomvaillant/undermind_web" target="_blank">Open-Source</a></li>
+   <!--        <li><a href="#">Submit</a></li> -->
+          <li><%= link_to "Privacy", privacy_path, method: :get, class: "navbar-item navbar-link" %></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

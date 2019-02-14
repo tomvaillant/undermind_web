@@ -1,4 +1,5 @@
 class ContentController < ApplicationController
+
   def create
     @content = Content.new(content_params)
     @content.save!
