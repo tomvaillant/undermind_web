@@ -7,7 +7,7 @@ class ContentController < ApplicationController
 
   def index
     @search_params = params[:search].split(/\W+/)
-    @content_list = Content.search(params[:search]).page(params[:page]).per(15)
+    @content_list = Content.search(params[:search]).page(params[:page]).per(10)
   end
 
   # def edit

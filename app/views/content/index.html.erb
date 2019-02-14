@@ -1,39 +1,41 @@
   <%= render 'shared/sub_navbar' %>
   <div class="index-container">
     <div class="listbox">
-      <!-- WITH SEARCH -->
-      <% if params[:search].present? %>
-        <!-- SEARCH - PARAMS EXIST -->
-        <% unless @content_list.nil? %>
-          <% @content_list.each do |content| %>
-            <%= render 'shared/list', content: content %>
-          <% end %>
-        <% else %>
-          <!-- SEARCH - PARAMS DO NOT EXIST -->
-          <div class="empty-search-warning">
-            <p>There are no items in
-            <% @search_params.each do |query| %>
-              <span>"<%= query.capitalize %>"</span>
+      <div class="listbox-inner col-md-8 col-md-offset-2 col-xs-12">
+        <!-- WITH SEARCH -->
+        <% if params[:search].present? %>
+          <!-- SEARCH - PARAMS EXIST -->
+          <% unless @content_list.nil? %>
+            <% @content_list.each do |content| %>
+              <%= render 'shared/list', content: content %>
             <% end %>
-            yet! Help us add some!
-            </p>
-          </div>
+          <% else %>
+            <!-- SEARCH - PARAMS DO NOT EXIST -->
+            <div class="empty-search-warning">
+              <p>There are no items in
+              <% @search_params.each do |query| %>
+                <span>"<%= query.capitalize %>"</span>
+              <% end %>
+              yet! Help us add some!
+              </p>
+            </div>
+            <% @content_list = Content.take(20) %>
+            <% @content_list.each do |content| %>
+              <%= render 'shared/list', content: content %>
+            <% end %>
+          <% end %>
+        <!-- EMPTY SEARCH -->
+        <% else %>
           <% @content_list = Content.take(20) %>
           <% @content_list.each do |content| %>
             <%= render 'shared/list', content: content %>
           <% end %>
         <% end %>
-      <!-- EMPTY SEARCH -->
-      <% else %>
-        <% @content_list = Content.take(20) %>
-        <% @content_list.each do |content| %>
-          <%= render 'shared/list', content: content %>
-        <% end %>
-      <% end %>
-    </div>
-    <% if params[:search].present? %>
-      <div class="kaminari">
-        <%= paginate @content_list, window: 2 %>
       </div>
-    <% end %>
+      <% if params[:search].present? %>
+        <div class="kaminari">
+          <%= paginate @content_list, window: 2 %>
+        </div>
+      <% end %>
+      </div>
 </div>

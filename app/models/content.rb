@@ -1,4 +1,6 @@
 class Content < ApplicationRecord
+  # paginantes_per 10
+
   validates :url, presence: true
   belongs_to :source
   belongs_to :category

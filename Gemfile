@@ -10,7 +10,6 @@ gem 'redis'
 gem "figaro"
 gem 'kaminari'
 gem "bootstrap-kaminari-views"
-gem 'font-awesome-sass', '~> 4.7'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
