@@ -45,11 +45,6 @@ CSV.foreach(csv_text, csv_options) do |row|
     c.source = source_new
   end
   c.save!
-  unless row[5].nil?
-    image = ContentImage.new({ url: "#{row[5]}" })
-    image.content = c
-    image.save!
-  end
 end
 
 
