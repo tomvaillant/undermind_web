@@ -32,13 +32,13 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  padding: 0 20px;
+  margin-right: 15px !important;
+  margin-left: 0px !important;
 }
 
 /* Navbar link */
@@ -61,10 +61,12 @@
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
-  font-size: 15px !important;
+  font-size: 16px !important;
   line-height: 22px !important;
-  padding: 10px 20px;
+  padding: 10px 20px !important;
+  padding: 10px 20px !important;
 }
+
 .navbar-dropdown-menu li > a:hover {
   background: transparent !important;
   color: black !important;

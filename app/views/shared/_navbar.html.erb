@@ -7,10 +7,12 @@
 
     <!-- Right Navigation -->
     <div class="navbar-right hidden-xs hidden-sm">
+      <a href="https://github.com/tomvaillant/undermind_web" class="navbar-item navbar-link" target="_blank">Contribute</a>
+      <a href="https://airtable.com/shrI3pQd5HfP0DVWH" class="navbar-item navbar-link" target="_blank">Submit</a>
       <%= link_to "About", about_path, method: :get, class: "navbar-item navbar-link" %>
-      <a href="https://github.com/tomvaillant/undermind_web" class="navbar-item navbar-link" target="_blank">Open-Source</a>
-      <%= link_to "Privacy", privacy_path, method: :get, class: "navbar-wagon-item navbar-link" %>
-  <!--     <a href="" class="navbar-wagon-item navbar-wagon-link">Submit</a> -->
+      <%= link_to "Privacy", privacy_path, method: :get, class: "navbar-item navbar-link" %>
+      <a href="https://github.com/tomvaillant/undermind_web" class="navbar-item navbar-link" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/tom_vaillant" target="_blank" class="navbar-item navbar-link" target="_blank"><i class="fab fa-twitter"></i></a>
     </div>
 
 
@@ -18,11 +20,12 @@
     <div class="navbar-item hidden-md hidden-lg">
       <div class="dropdown">
         <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "About", about_path, method: :get, class: "navbar-item navbar-link" %></li>
-          <li><a href="https://github.com/tomvaillant/undermind_web" target="_blank">Open-Source</a></li>
-   <!--        <li><a href="#">Submit</a></li> -->
-          <li><%= link_to "Privacy", privacy_path, method: :get, class: "navbar-item navbar-link" %></li>
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <li><%= link_to "About", about_path, method: :get, class: "" %></li>
+          <li><%= link_to "Privacy", privacy_path, method: :get, class: "" %></li>
+          <li><a href="https://airtable.com/shrI3pQd5HfP0DVWH" class="" target="_blank">Submit</a></li>
+          <li><a href="https://github.com/tomvaillant/undermind_web" target="_blank" class="">Contribute</a></li>
+          </li>
         </ul>
       </div>
     </div>

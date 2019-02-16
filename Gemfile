@@ -9,11 +9,10 @@ gem 'rails', '5.1.5'
 gem 'redis'
 gem "figaro"
 gem 'kaminari'
-gem "bootstrap-kaminari-views"
+# gem 'will_paginate', '~> 3.1.0'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'

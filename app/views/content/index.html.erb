@@ -3,9 +3,7 @@
     <div class="listbox">
       <div class="listbox-inner col-md-8 col-md-offset-2 col-xs-12">
         <!-- WITH SEARCH -->
-        <% if params[:search].present? %>
-          <!-- SEARCH - PARAMS EXIST -->
-          <% unless @content_list.nil? %>
+          <% unless @content_list.empty? %>
             <% @content_list.each do |content| %>
               <%= render 'shared/list', content: content %>
             <% end %>
@@ -16,26 +14,21 @@
               <% @search_params.each do |query| %>
                 <span>"<%= query.capitalize %>"</span>
               <% end %>
-              yet! Help us add some!
+              yet! Help us add some <a href="https://airtable.com/shrI3pQd5HfP0DVWH"><strong>here</a></strong>!
               </p>
             </div>
-            <% @content_list = Content.take(20) %>
-            <% @content_list.each do |content| %>
+            <% @content_search_empty.each do |content| %>
               <%= render 'shared/list', content: content %>
             <% end %>
           <% end %>
+          <div class="col-md-offset-4">
+            <% unless @content_list.empty? %>
+              <%= paginate @content_list %>
+            <% else %>
+              <%= paginate @content_search_empty %>
+            <% end %>
+          </div>
         <!-- EMPTY SEARCH -->
-        <% else %>
-          <% @content_list = Content.take(20) %>
-          <% @content_list.each do |content| %>
-            <%= render 'shared/list', content: content %>
-          <% end %>
-        <% end %>
       </div>
-      <% if params[:search].present? %>
-        <div class="kaminari">
-          <%= paginate @content_list, window: 2 %>
-        </div>
-      <% end %>
-      </div>
+  </div>
 </div>

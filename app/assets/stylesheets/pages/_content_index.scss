@@ -4,17 +4,6 @@
   justify-content: space-between;
 }
 
-.wrapper-search {
-  min-height: 100vh;
-  background-color: white;
-  a {
-    text-decoration: none !important;
-  }
-  a:hover {
-    text-decoration: none !important;
-  }
-}
-
 .listbox {
   background-color: white;
   width: 100%;
@@ -31,4 +20,10 @@
 .kaminari {
   margin-bottom: 10px;
   align-self: center;
+}
+
+.empty-search-warning {
+  font-size: 14px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
