@@ -1,22 +1,22 @@
 <%= link_to content.url, target: "_blank" do %>
   <div class="listbox-wrapper">
     <div class="listbox-content-type">
-      <% if content.content_type.name == "Articles" %>
+      <% if content.content_type == "Articles" %>
         <%= image_tag("article.png") %>
-      <% elsif content.content_type.name == "Lectures" %>
+      <% elsif content.content_type == "Lectures" %>
         <%= image_tag("lecture.png") %>
-      <% elsif content.content_type.name == "Videos" %>
+      <% elsif content.content_type == "Videos" %>
         <%= image_tag("video.png") %>
       <% end %>
     </div>
     <div class="listbox-source">
-      <%= content.source.name %>
+      <%= content.source %>
     </div>
     <div class="listbox-title">
       <%= content.title %>
     </div>
     <div class="listbox-category hidden-xs">
-      <%= content.category.title %>
+      <%= content.category %>
     </div>
   </div>
 <% end %>

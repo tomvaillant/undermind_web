@@ -40,6 +40,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    airtable (0.0.9)
+      httparty
     arel (8.0.0)
     arel-helpers (2.8.0)
       activerecord (>= 3.1.0, < 6)
@@ -231,6 +233,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airtable
   autoprefixer-rails
   bootstrap-sass (~> 3.3)
   dotenv-rails
