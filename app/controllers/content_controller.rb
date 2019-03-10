@@ -6,14 +6,19 @@ class ContentController < ApplicationController
   end
 
   def index
+    @client = Airtable::Client.new("keym68dki3Q2a3qZv")
+    @table = @client.table("appTHjGm4xqid5XeY", "Bible")
+    @records = @table.records
+    @records_index = @table.select(Content_Type: "Videos").first(20)
     unless params[:search].nil?
       @search_params = params[:search].split(/\W+/)
       @content_list = Content.search(params[:search]).page(params[:page])
       if @content_list.empty?
-        @content_search_empty = Content.search("Curiosity").page(params[:page])
+        @content_search_empty = @records_index
       end
     else
-      @content_list = Content.search("Curiosity").page(params[:page])
+      # @content_list = Content.search("Curiosity").page(params[:page])
+      @content_list = @records_index
     end
   end
 
